@@ -9,7 +9,7 @@ import { join, resolve } from 'node:path';
 import puppeteer from 'puppeteer-core';
 
 const BROWSER = process.env.BROWSER ?? 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
-const EXT = resolve('.output/chrome-mv3');
+const EXT = resolve(process.env.EXT_DIR ?? '.output/chrome-mv3');
 const FIX = resolve('fixtures');
 
 const ROUTES = [
