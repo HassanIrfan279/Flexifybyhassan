@@ -1,0 +1,516 @@
+{
+  "source_notes": "Compiled 2026-10-06. nu.edu.pk/Program/* roadmaps (current 2023+ codes, checked live and via Wayback 2021-2024) list NO prerequisites for any program. Only official FAST page with a prerequisite column: lhr.nu.edu.pk/fsc/programDetails (BS CS/SE/DS), but it is the pre-2020 scheme with old codes (CS118, CS217, CS218...); mapped to new codes by course name. Blank cells there were treated as 'not stated', not 'none'. BS(CS) is primarily sourced from FAST NCEAC course-description forms (course outlines) for KHI campus batches 2023-2026 in the FAST-NUCES-Hub GitHub repos, plus older outlines (2021-2025) in Syed007Hassan/Fast-Material-CS-SE and arham2003/FAST-NUCES-Material. Outlines are per-instructor/campus and may differ by campus. Empty prerequisites mean either explicitly 'None' in a source or no source found: NO source was found for SL1012, CL1002, SS1018, SS1019, EL1005, SL1014, CL1004, EL2003, CL2001, AL2002, CL2006, SS1015, CS4087, CS4031, MG4011, CS4092, CS2019 (official note: register after 3rd semester), CS4091/CS4001 (old LHR page says 'Sr. Year' standing, not a course). No source states lab corequisites, so all corequisites are empty. Notes/conflicts: EE1005 DLD prereq Applied Physics comes only from KHI Spring'24 outline (old LHR page blank). CS3009 requires CS3004 Software Design and Analysis (on official BS(CS) roadmap, not in Flex Fall-2024 list). EE3009 Computer Architecture sourced from outline coded EE2013 (DLD, COAL). CS2006: KHI Spring'25 says PF & DS, LHR old says DS only. CS3002: outline Fall'22 says CS3001; old LHR CS says 'Sr. Year'; old LHR SE says Software Construction & Development (kept in BS(SE)). BS(SE) and BS(DS) come only from the old-scheme LHR pages mapped to new codes via the current nu.edu.pk roadmaps; treat as lower confidence. BS(AI), BS(CY), BS(EE), BBA: no source with prerequisites found.",
+  "programs": {
+    "BS(CS)": {
+      "sources": [
+        "https://nu.edu.pk/Program/BS(CS)",
+        "https://lhr.nu.edu.pk/fsc/programDetails/BS%20(Computer%20Science)",
+        "https://github.com/FAST-NUCES-Hub/FAST-KHI-Semester-1",
+        "https://github.com/FAST-NUCES-Hub/FAST-KHI-Semester-2",
+        "https://github.com/FAST-NUCES-Hub/FAST-KHI-Semester-3",
+        "https://github.com/FAST-NUCES-Hub/FAST-KHI-Semester-4",
+        "https://github.com/FAST-NUCES-Hub/FAST-KHI-Semester-5",
+        "https://github.com/FAST-NUCES-Hub/FAST-KHI-Semester-6",
+        "https://github.com/FAST-NUCES-Hub/FAST-KHI-Semester-7",
+        "https://github.com/Syed007Hassan/Fast-Material-CS-SE",
+        "https://github.com/arham2003/FAST-NUCES-Material",
+        "https://github.com/ammansoomro/FAST-Resources"
+      ],
+      "courses": {
+        "NS1001": {
+          "name": "Applied Physics",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "MT1003": {
+          "name": "Calculus and Analytical Geometry",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SS1012": {
+          "name": "Functional English",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SL1012": {
+          "name": "Functional English Lab",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SS1013": {
+          "name": "Ideology and Constitution of Pakistan",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CL1000": {
+          "name": "Introduction to Information and Communication Technology",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS1002": {
+          "name": "Programming Fundamentals",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CL1002": {
+          "name": "Programming Fundamentals Lab",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SS1018": {
+          "name": "Understanding Holy Quran",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SS2043": {
+          "name": "Civics and Community Engagement",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "EE1005": {
+          "name": "Digital Logic Design",
+          "prerequisites": [
+            "NS1001"
+          ],
+          "corequisites": []
+        },
+        "EL1005": {
+          "name": "Digital Logic Design Lab",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SS1014": {
+          "name": "Expository Writing",
+          "prerequisites": [
+            "SS1012"
+          ],
+          "corequisites": []
+        },
+        "SL1014": {
+          "name": "Expository Writing Lab",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SS1007": {
+          "name": "Islamic Studies/Ethics",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "MT1008": {
+          "name": "Multivariable Calculus",
+          "prerequisites": [
+            "MT1003"
+          ],
+          "corequisites": []
+        },
+        "CS1004": {
+          "name": "Object Oriented Programming",
+          "prerequisites": [
+            "CS1002"
+          ],
+          "corequisites": []
+        },
+        "CL1004": {
+          "name": "Object Oriented Programming Lab",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SS1019": {
+          "name": "Understanding Sirat-Un-Nabi",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "EE2003": {
+          "name": "Computer Organization and Assembly Language",
+          "prerequisites": [
+            "CS1002",
+            "EE1005"
+          ],
+          "corequisites": []
+        },
+        "EL2003": {
+          "name": "Computer Organization and Assembly Language Lab",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS2001": {
+          "name": "Data Structures",
+          "prerequisites": [
+            "CS1004"
+          ],
+          "corequisites": []
+        },
+        "CL2001": {
+          "name": "Data Structures Lab",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS1005": {
+          "name": "Discrete Structures",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "MT1004": {
+          "name": "Linear Algebra",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS3005": {
+          "name": "Theory of Automata",
+          "prerequisites": [
+            "CS1005"
+          ],
+          "corequisites": []
+        },
+        "AI2002": {
+          "name": "Artificial Intelligence",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "AL2002": {
+          "name": "Artificial Intelligence Lab",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS2005": {
+          "name": "Database Systems",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CL2005": {
+          "name": "Database Systems Lab",
+          "prerequisites": [
+            "CL2001"
+          ],
+          "corequisites": []
+        },
+        "CS2006": {
+          "name": "Operating Systems",
+          "prerequisites": [
+            "CS1002",
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CL2006": {
+          "name": "Operating Systems Lab",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SS1015": {
+          "name": "Pakistan Studies",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "MT2005": {
+          "name": "Probability and Statistics",
+          "prerequisites": [
+            "MT1003"
+          ],
+          "corequisites": []
+        },
+        "CS3004": {
+          "name": "Software Design and Analysis",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CS3009": {
+          "name": "Software Engineering",
+          "prerequisites": [
+            "CS3004"
+          ],
+          "corequisites": []
+        },
+        "CS3014": {
+          "name": "Applied Human Computer Interaction",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "EE3009": {
+          "name": "Computer Architecture",
+          "prerequisites": [
+            "EE1005",
+            "EE2003"
+          ],
+          "corequisites": []
+        },
+        "CS3001": {
+          "name": "Computer Networks",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CL3001": {
+          "name": "Computer Networks Lab",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CS2009": {
+          "name": "Design and Analysis of Algorithms",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "SS2012": {
+          "name": "Technical and Business Writing",
+          "prerequisites": [
+            "SS1014"
+          ],
+          "corequisites": []
+        },
+        "CS4087": {
+          "name": "Advanced Database Management Systems",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS4031": {
+          "name": "Compiler Construction",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS3006": {
+          "name": "Parallel and Distributed Computing",
+          "prerequisites": [
+            "CS2006"
+          ],
+          "corequisites": []
+        },
+        "MG4011": {
+          "name": "Entrepreneurship",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS4091": {
+          "name": "Final Year Project - I",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS4092": {
+          "name": "Final Year Project - II",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS2019": {
+          "name": "Computing Internship",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS3002": {
+          "name": "Information Security",
+          "prerequisites": [
+            "CS3001"
+          ],
+          "corequisites": []
+        },
+        "CS4001": {
+          "name": "Professional Practices in IT",
+          "prerequisites": [],
+          "corequisites": []
+        }
+      }
+    },
+    "BS(SE)": {
+      "sources": [
+        "https://lhr.nu.edu.pk/fsc/programDetails/BS%20(Software%20Engineering)",
+        "https://nu.edu.pk/Program/BS(SE)"
+      ],
+      "courses": {
+        "CS1002": {
+          "name": "Programming Fundamentals",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS1004": {
+          "name": "Object Oriented Programming",
+          "prerequisites": [
+            "CS1002"
+          ],
+          "corequisites": []
+        },
+        "CS2001": {
+          "name": "Data Structures",
+          "prerequisites": [
+            "CS1004"
+          ],
+          "corequisites": []
+        },
+        "SE1001": {
+          "name": "Introduction to Software Engineering",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "SE2001": {
+          "name": "Software Requirements Engineering",
+          "prerequisites": [
+            "SE1001"
+          ],
+          "corequisites": []
+        },
+        "SE2002": {
+          "name": "Software Design and Architecture",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "SE3005": {
+          "name": "Software Construction & Development",
+          "prerequisites": [
+            "SE2002"
+          ],
+          "corequisites": []
+        },
+        "SE3002": {
+          "name": "Software Quality Engineering",
+          "prerequisites": [
+            "SE1001"
+          ],
+          "corequisites": []
+        },
+        "SE4092": {
+          "name": "Fundamentals of Software Project Management",
+          "prerequisites": [
+            "SE2001"
+          ],
+          "corequisites": []
+        },
+        "CS2005": {
+          "name": "Database Systems",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CS2006": {
+          "name": "Operating Systems",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CS3001": {
+          "name": "Computer Networks",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CS3002": {
+          "name": "Information Security",
+          "prerequisites": [
+            "SE3005"
+          ],
+          "corequisites": []
+        },
+        "CS1005": {
+          "name": "Discrete Structures",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "MT1003": {
+          "name": "Calculus and Analytical Geometry",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "MT1004": {
+          "name": "Linear Algebra",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CL1000": {
+          "name": "Introduction to Information and Communication Technology",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS4001": {
+          "name": "Professional Practices",
+          "prerequisites": [],
+          "corequisites": []
+        }
+      }
+    },
+    "BS(DS)": {
+      "sources": [
+        "https://lhr.nu.edu.pk/fsc/programDetails/BS%20(Data%20Science)",
+        "https://nu.edu.pk/Program/BS(DS)"
+      ],
+      "courses": {
+        "CS1002": {
+          "name": "Programming Fundamentals",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CS1004": {
+          "name": "Object Oriented Programming",
+          "prerequisites": [
+            "CS1002"
+          ],
+          "corequisites": []
+        },
+        "CS2001": {
+          "name": "Data Structures",
+          "prerequisites": [
+            "CS1004"
+          ],
+          "corequisites": []
+        },
+        "CS2005": {
+          "name": "Database Systems",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CS2006": {
+          "name": "Operating Systems",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CS2009": {
+          "name": "Design and Analysis of Algorithms",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CS3001": {
+          "name": "Computer Networks",
+          "prerequisites": [
+            "CS2001"
+          ],
+          "corequisites": []
+        },
+        "CS3002": {
+          "name": "Information Security",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "MT1003": {
+          "name": "Calculus and Analytical Geometry",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "MT1004": {
+          "name": "Linear Algebra",
+          "prerequisites": [],
+          "corequisites": []
+        },
+        "CL1000": {
+          "name": "Introduction to Information and Communication Technology",
+          "prerequisites": [],
+          "corequisites": []
+        }
+      }
+    }
+  }
+}

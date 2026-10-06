@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Type-check, test, build, lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type-check
+        run: npm run check
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Build Chrome and Firefox
+        run: |
+          npm run build
+          npm run build:firefox
+
+      - name: Firefox add-on lint
+        run: npm run lint:firefox
+
+      - name: Shipped code has no eval or remote scripts
+        run: |
+          if grep -rlE '\beval\(|new Function\(' .output/chrome-mv3 .output/firefox-mv2; then
+            echo "::error::eval or new Function found in the shipped bundle"; exit 1
+          fi
+
+      - name: Dependency audit (runtime dependencies)
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Package
+        run: |
+          npm run zip
+          npm run zip:firefox
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: flexify-packages
+          path: .output/*.zip
+          # WXT writes to .output, which upload-artifact skips by default as a hidden folder.
+          include-hidden-files: true
+          if-no-files-found: error

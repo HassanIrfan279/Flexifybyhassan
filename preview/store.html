@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexify store frame</title>
+    <style>
+      /* 1280×800 Chrome Web Store screenshot: headline left, live side panel right. */
+      html, body { margin: 0; width: 1280px; height: 800px; overflow: hidden; }
+      body {
+        font-family: 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+        color: #e6edf7;
+        background:
+          radial-gradient(700px 500px at 10% 10%, rgba(0, 194, 247, 0.22), transparent 70%),
+          radial-gradient(700px 600px at 90% 90%, rgba(48, 116, 249, 0.25), transparent 70%),
+          #070b14;
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        align-items: center;
+        gap: 56px;
+        padding: 0 88px;
+        box-sizing: border-box;
+      }
+      .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
+      .brand img { width: 56px; height: 56px; }
+      .brand span { font-size: 30px; font-weight: 800; letter-spacing: 0.02em; }
+      h1 { font-size: 54px; line-height: 1.08; margin: 0 0 22px; font-weight: 800; }
+      h1 em {
+        font-style: normal;
+        background: linear-gradient(135deg, #00c2f7, #3074f9);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      p { font-size: 22px; line-height: 1.5; color: #a9b6cc; margin: 0; max-width: 560px; }
+      .foot { margin-top: 44px; font-size: 15px; line-height: 1.7; color: #6f7f99; max-width: none; }
+      .frame {
+        width: 420px; height: 600px; border-radius: 18px; overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 0 0 1px rgba(0, 194, 247, 0.35), 0 0 60px rgba(0, 194, 247, 0.25), 0 30px 80px rgba(0, 0, 0, 0.5);
+      }
+      iframe { width: 420px; height: 600px; border: 0; display: block; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="brand"><img src="/icon.svg" alt="" /><span>Flexify</span></div>
+      <h1 id="title"></h1>
+      <p id="sub"></p>
+      <p class="foot">Flexify by Hassan Irfan · Everything stays on your device<br />Independent project, not affiliated with FAST-NUCES</p>
+    </div>
+    <div class="frame"><iframe id="panel" title="Flexify side panel"></iframe></div>
+    <script>
+      const q = new URLSearchParams(location.search);
+      document.getElementById('title').innerHTML = q.get('title') ?? '';
+      document.getElementById('sub').textContent = q.get('sub') ?? '';
+      document.getElementById('panel').src = `/index.html?demo=1&sync=1&tab=${q.get('tab') ?? 'overview'}&scroll=${q.get('scroll') ?? 0}&click=${encodeURIComponent(q.get('click') ?? '')}`;
+    </script>
+  </body>
+</html>

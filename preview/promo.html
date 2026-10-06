@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexify promo tile</title>
+    <style>
+      /* ?w=440&h=280 small tile, ?w=1400&h=560 marquee. Sizes scale from height. */
+      html, body { margin: 0; overflow: hidden; }
+      body {
+        font-family: 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+        color: #e6edf7;
+        background:
+          radial-gradient(60% 90% at 0% 0%, rgba(0, 194, 247, 0.3), transparent 70%),
+          radial-gradient(60% 90% at 100% 100%, rgba(48, 116, 249, 0.35), transparent 70%),
+          #070b14;
+        display: flex; align-items: center; justify-content: center;
+        box-sizing: border-box;
+      }
+      .wrap { display: flex; align-items: center; gap: calc(var(--h) * 0.08); }
+      img { width: calc(var(--h) * 0.36); height: calc(var(--h) * 0.36); filter: drop-shadow(0 0 30px rgba(0, 194, 247, 0.45)); }
+      h1 { margin: 0; font-size: calc(var(--h) * 0.2); font-weight: 800; letter-spacing: 0.01em; line-height: 1; }
+      p { margin: calc(var(--h) * 0.04) 0 0; font-size: calc(var(--h) * 0.075); color: #a9b6cc; }
+      p em { font-style: normal; background: linear-gradient(135deg, #00c2f7, #3074f9); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <img src="/icon.svg" alt="" />
+      <div>
+        <h1>Flexify</h1>
+        <p>Flex, but <em>smarter</em>. <span style="font-size:.7em;color:#00c2f7">by Hassan Irfan</span></p>
+        <p id="extra"></p>
+      </div>
+    </div>
+    <script>
+      const q = new URLSearchParams(location.search);
+      const w = Number(q.get('w') ?? 440), h = Number(q.get('h') ?? 280);
+      Object.assign(document.body.style, { width: w + 'px', height: h + 'px' });
+      document.body.style.setProperty('--h', h + 'px');
+      if (w / h > 2) document.getElementById('extra').textContent = 'GPA with repeats · Warning planner · Prerequisites · One-click feedback';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "flexify",
+  "description": "Flexify by Hassan Irfan: a smarter FlexStudent portal for FAST-NUCES students",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "postinstall": "wxt prepare",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "preview:ui": "vite --config preview/vite.config.ts",
+    "icons": "node scripts/icons.mjs",
+    "lint:firefox": "web-ext lint -s .output/firefox-mv2 --self-hosted=false",
+    "verify": "npm run check && npm test && npm run build && npm run build:firefox && npm run lint:firefox",
+    "e2e": "node scripts/e2e.mjs"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "@tsconfig/svelte": "^5.0.8",
+    "@wxt-dev/module-svelte": "^2.0.4",
+    "happy-dom": "^20.14.5",
+    "puppeteer-core": "^25.12.0",
+    "svelte": "^5.53.7",
+    "svelte-check": "^4.4.4",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.1.5",
+    "vitest": "^5.0.3",
+    "web-ext": "^10.5.0",
+    "wxt": "^0.21.3"
+  },
+  "author": "Hassan Irfan",
+  "license": "MIT"
+}

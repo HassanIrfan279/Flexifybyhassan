@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flex page preview</title>
+    <!-- Flex's own (public) stylesheets, so the preview looks like the real portal. -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet" />
+    <link href="/Assets/vendors/base/vendors.bundle.css" rel="stylesheet" />
+    <link href="/Assets/demo/demo3/base/style.bundle.css" rel="stylesheet" />
+    <link href="/Assets/CustomCss.css" rel="stylesheet" />
+    <style>
+      /* Flex loads Poppins through a font-loader script the preview leaves out. */
+      body, .m-page, h1, h2, h3, h4, h5, h6, td, th, a, span, p, label, button { font-family: Poppins, 'Segoe UI', sans-serif; }
+    </style>
+  </head>
+  <body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+    <script type="module" src="./flex.ts"></script>
+  </body>
+</html>

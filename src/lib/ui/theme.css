@@ -1,0 +1,149 @@
+/*
+ * Flexify design tokens. 60-30-10:
+ *   60% background  — near-black navy with the particle field
+ *   30% surfaces    — solid navy panels, tabs and controls (glass only for overlays)
+ *   10% accent      — neon cyan, reserved for the active state, primary action and key figures
+ */
+:root,
+:host {
+  --df-bg: #05070d;
+  --df-surface: #0d1322;
+  --df-surface-2: #131b2e;
+  --df-surface-3: #1a2440;
+  --df-glass: rgba(13, 19, 34, 0.72);
+  --df-border: #1f2a44;
+  --df-border-strong: #2b3a5c;
+  --df-text: #eaf0fa;
+  --df-muted: #8e9ab3;
+  --df-accent: #00c2f7;
+  --df-accent-ink: #031318;
+  --df-accent-soft: rgba(0, 194, 247, 0.12);
+  --df-good: #34d399;
+  --df-warn: #fbbf24;
+  --df-bad: #f87171;
+  --df-glow: 0 0 0 1px rgba(0, 194, 247, 0.55), 0 0 18px rgba(0, 194, 247, 0.28);
+  --df-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --df-radius: 14px;
+  --df-radius-sm: 10px;
+  --df-control-h: 36px;
+  --df-font: 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+/* Content panel (30%): frosted glass, opaque enough to keep text crisp. */
+.df-card {
+  background: rgba(13, 19, 34, 0.84);
+  border: 1px solid var(--df-border);
+  border-radius: var(--df-radius);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* Frosted overlay, for floating layers over the particle field. */
+.df-glass {
+  background: var(--df-glass);
+  border: 1px solid var(--df-border);
+  border-radius: var(--df-radius);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+/* Buttons: one height, one radius, centred labels — so rows line up. */
+.df-btn {
+  box-sizing: border-box;
+  height: var(--df-control-h);
+  min-width: 104px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: 600 13px/1 var(--df-font);
+  white-space: nowrap;
+  border-radius: var(--df-radius-sm);
+  border: 1px solid var(--df-border-strong);
+  background: var(--df-surface-2);
+  color: var(--df-text);
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s, border-color 0.15s, transform 0.1s;
+}
+.df-btn:hover {
+  background: var(--df-surface-3);
+  border-color: var(--df-accent);
+}
+.df-btn:active {
+  transform: translateY(1px);
+}
+.df-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.df-btn:focus-visible,
+.df-input:focus-visible {
+  outline: 2px solid var(--df-accent);
+  outline-offset: 2px;
+}
+.df-btn.primary {
+  background: var(--df-accent);
+  border-color: var(--df-accent);
+  color: var(--df-accent-ink);
+}
+.df-btn.primary:hover {
+  box-shadow: var(--df-glow);
+}
+.df-btn.block {
+  width: 100%;
+}
+
+.df-input {
+  box-sizing: border-box;
+  height: var(--df-control-h);
+  width: 100%;
+  padding: 0 12px;
+  font: 500 13px/1 var(--df-font);
+  border-radius: var(--df-radius-sm);
+  border: 1px solid var(--df-border-strong);
+  background: var(--df-surface-2);
+  color: var(--df-text);
+}
+textarea.df-input {
+  height: auto;
+  padding: 10px 12px;
+  line-height: 1.5;
+}
+.df-input::placeholder {
+  color: var(--df-muted);
+}
+.df-input:focus {
+  outline: none;
+  border-color: var(--df-accent);
+}
+
+.df-chip {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font: 600 11px/1 var(--df-font);
+  border: 1px solid var(--df-border-strong);
+  background: var(--df-surface-2);
+  color: var(--df-muted);
+  white-space: nowrap;
+}
+.df-chip.good { color: var(--df-good); border-color: color-mix(in srgb, var(--df-good) 45%, transparent); }
+.df-chip.warn { color: var(--df-warn); border-color: color-mix(in srgb, var(--df-warn) 45%, transparent); }
+.df-chip.bad { color: var(--df-bad); border-color: color-mix(in srgb, var(--df-bad) 45%, transparent); }
+.df-chip.accent { color: var(--df-accent); border-color: color-mix(in srgb, var(--df-accent) 45%, transparent); }
+button.df-chip {
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
